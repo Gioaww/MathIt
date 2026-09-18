@@ -1,4 +1,3 @@
-# 1º projeto em python
 import qrcode
 
 
