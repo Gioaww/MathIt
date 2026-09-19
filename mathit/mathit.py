@@ -1,4 +1,3 @@
-#2º projeto em python
 from random import randint
 
 
@@ -13,68 +12,42 @@ def main():
             y = geradornumero(level, 0)
             print(f"{x} + {y}")
             answer = x + y
-            while True:
-                try:
-                    user_answer = int(input("Resposta: "))
-                    if user_answer == answer:
-                        print("Correto\n")
-                        break
-                    else:
-                        print("Errado")
-                        continue
-                except ValueError:
-                    pass
+            checkanswer(answer)
 
         elif operador == 2:  # subtração
             x = geradornumero(level, 0)
             y = geradornumero(level, x)
             print(f"{x} - {y}")
             answer = x - y
-            while True:
-                try:
-                    user_answer = int(input("Resposta:"))
-                    if user_answer == answer:
-                        print("Correto\n")
-                        break
-                    else:
-                        print("Errado")
-                        continue
-                except ValueError:
-                    pass
+            checkanswer(answer)
 
         elif operador == 3:  # multiplicação
             x = geradornumero(level, 0)
             y = geradornumero(1, 0)
             print(f"{x} * {y}")
             answer = x * y
-            while True:
-                try:
-                    user_answer = int(input("Resposta"))
-                    if user_answer == answer:
-                        print("Correto\n")
-                        break
-                    else:
-                        print("Errado")
-                        continue
-                except ValueError:
-                    pass
+            checkanswer(answer)
 
         elif operador == 4:  # Divisão
             x = geradornumero(level, 0)
             y = geradornumero(1, 1)
             print(f"{x}/{y}")
-            answer = x / y
-            while True:
-                try:
-                    user_answer = int(input("Resposta"))
-                    if user_answer == answer:
-                        print("Correto\n")
-                        break
-                    else:
-                        print("Errado")
-                        continue
-                except ValueError:
-                    pass
+            answer = round(x / y, 2)
+            checkanswer(answer)
+
+
+def checkanswer(answer):
+    while True:
+        try:
+            user_answer = float(input("Resposta: "))
+            if user_answer == answer:
+                print("Correto\n")
+                break
+            else:
+                print("Errado")
+                continue
+        except ValueError:
+            pass
 
 
 def getoperator():
