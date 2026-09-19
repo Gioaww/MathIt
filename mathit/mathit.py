@@ -34,7 +34,7 @@ def main():
             print(f"{x}/{y}")
             answer = round(x / y, 2)
             checkanswer(answer)
-
+    
 
 def checkanswer(answer):
     while True:
